@@ -7,12 +7,12 @@ RUN apt update && apt install -y \
     build-essential \
     libssl-dev \
 && rm -rf /var/lib/apt/lists/*
-WORKDIR /BUILDABOT_PROJECT_NAME
+WORKDIR /aidobot-2
 COPY . .
 RUN mkdir build && cd build && cmake .. && make
 
 FROM alpine:latest
 RUN apk --no-cache add libgcc libstdc++ libc6-compat
-WORKDIR /BUILDABOT_PROJECT_NAME
-COPY --from=build /BUILDABOT_PROJECT_NAME/build/BUILDABOT_PROJECT_NAME .
-CMD ["./BUILDABOT_PROJECT_NAME"]
+WORKDIR /aidobot-2
+COPY --from=build /aidobot-2/build/aidobot-2 .
+CMD ["./aidobot-2"]

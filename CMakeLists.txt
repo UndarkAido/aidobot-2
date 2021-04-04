@@ -1,9 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
-project(BUILDABOT_PROJECT_NAME)
+project(aidobot-2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-BUILDABOT_SUBDIR
+add_subdirectory(lib/discordpp)
+add_subdirectory(lib/websocket-simpleweb)
+add_subdirectory(lib/rest-beast)
+add_subdirectory(lib/plugin-ratelimit)
+add_subdirectory(lib/plugin-overload)
+add_subdirectory(lib/plugin-responder)
+add_subdirectory(lib/plugin-endpoints)
+add_subdirectory(lib/plugin-constructs)
 
 set(SOURCE_FILES main.cc extern.cc)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
@@ -33,7 +40,14 @@ TARGET_LINK_LIBRARIES(
         ${Boost_LIBRARIES}
         Threads::Threads
         ${OPENSSL_LIBRARIES}
-        BUILDABOT_TLL
+        discordpp
+        discordpp-websocket-simpleweb
+        discordpp-rest-beast
+        discordpp-plugin-ratelimit
+        discordpp-plugin-overload
+        discordpp-plugin-responder
+        discordpp-plugin-endpoints
+        discordpp-plugin-constructs
 )
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/token.dat)

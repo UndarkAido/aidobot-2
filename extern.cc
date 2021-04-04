@@ -1,4 +1,4 @@
 #define ECHO_EXTERN
 #include "include.hh"
 
-template class BUILDABOT_TEMPLATE_BEGINdiscordpp::BotBUILDABOT_TEMPLATE_END;
+template class discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginOverload<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;

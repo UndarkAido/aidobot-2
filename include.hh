@@ -16,14 +16,21 @@
 
 #endif
 
-BUILDABOT_INCLUDE
+#include <discordpp/bot.hh>
+#include <discordpp/websocket-simpleweb.hh>
+#include <discordpp/rest-beast.hh>
+#include <discordpp/plugin-ratelimit.hh>
+#include <discordpp/plugin-overload.hh>
+#include <discordpp/plugin-responder.hh>
+#include <discordpp/plugin-endpoints.hh>
+#include <discordpp/plugin-constructs.hh>
 
 // Put more D++ plugin `include`s here
 
 #ifndef DPPBOT_EXTERN
 
-extern template class BUILDABOT_TEMPLATE_BEGINdiscordpp::BotBUILDABOT_TEMPLATE_END;
-using DppBot = BUILDABOT_TEMPLATE_BEGINdiscordpp::BotBUILDABOT_TEMPLATE_END;
+extern template class discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginOverload<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
+using DppBot = discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginOverload<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
 
 #undef DPPBOT_EXTERN
 

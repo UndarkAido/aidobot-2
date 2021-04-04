@@ -54,10 +54,37 @@ int main() {
     bot->handlers.insert(
         {"READY", [&self](json data) { self = data["user"]; }});
 
-    // TODO Define your handlers here
+    bot->prefix = "$";
 
-    // Create Asio context, this handles async stuff.
-    auto aioc = std::make_shared<asio::io_context>();
+    bot->respond("easter",
+                 "```"
+                 "                               __\n"
+                 "   .. | | .................... |  .....................\n"
+                 "  :   |_|  _   _   _           |_   _      |_ _  ,__  :\n"
+                 "  :   | | / | | \\ | \\ / |      |   / |  /\\ | / ) |  ` :\n"
+                 "  :   | | \\_|_|_/_|_/_\\_|  ___ |__ \\_|_/ /_|_\\/_/|    :\n"
+                 "  :           |   |     |.'()o`.                      :\n"
+                 "  :           |   |    .|O o _()`.                    :\n"
+                 "  :                   /_) o (_) o \\                   :\n"
+                 "  :                  /o  ()  o_ O(_\\                  :\n"
+                 "  :               .--._O   o (_) O _.--.              :\n"
+                 "  :              /`--._`-.O () o.-'_.--'\\             :\n"
+                 "  :          .-=-.     `-.\\.==./.-'    _|             :\n"
+                 "  :        .'     \\_    ~-')  (`-~     .-~-.          :\n"
+                 "  :     __.|    p )_\\ _.--/`=='\\--._ _/     `.        :\n"
+                 "  :_.-''          /--'()o/   |  `.O /_( q    |.__     :\n"
+                 "<`'     ..._    <'  \\O o/    |    `o/ \\          ``-._:\n"
+                 " `._ .-'    `.  |    `o/     |\\     `  `>    _...     `^>\n"
+                 "  ; `.    .-'  /      / .-.  |o\\   ___:.|  .'    `~. _,'\n"
+                 "  :\\  `~~'  _.'      /,' `-`.|-'\\ |      \\ `-.    ,' ;:\n"
+                 "  :.`\"...\"'% _ ..................\\|.......`.  `~~'  /.:\n"
+                 "        \\__ |`.                           _ 7`\"...\"'\n"
+                 "        /`.                               ,'| __/\n"
+                 "                                              ,'\\     hjw"
+                 "```");
+
+        // Create Asio context, this handles async stuff.
+        auto aioc = std::make_shared<asio::io_context>();
 
     // Set the bot up
     bot->initBot(6, token, aioc);

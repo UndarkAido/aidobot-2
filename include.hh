@@ -29,8 +29,8 @@
 
 #ifndef DPPBOT_EXTERN
 
-extern template class discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginOverload<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
-using DppBot = discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginOverload<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
+extern template class discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginResponder<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
+using DppBot = discordpp::PluginConstructs<discordpp::PluginEndpoints<discordpp::PluginResponder<discordpp::PluginOverload<discordpp::PluginRateLimit<discordpp::RestBeast<discordpp::WebsocketSimpleWeb<discordpp::Bot>>>>>>>;
 
 #undef DPPBOT_EXTERN
 

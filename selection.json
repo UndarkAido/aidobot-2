@@ -1,0 +1,75 @@
+{
+    "Discord++": {
+	"single": true,
+	"choice": {
+	    "Default": {
+		"owner": "DiscordPP",
+		"name": "discordpp",
+		"include": "discordpp/bot.hh",
+		"include": "discordpp/bot.hh"
+	    }
+	}
+    },
+    "WebSocket": {
+	"single": true,
+	"choice": {
+	    "SimpleWeb": {
+		"owner": "DiscordPP",
+		"name": "websocket-simpleweb",
+		"include": "discordpp/websocket-simpleweb.hh",
+		"class": "discordpp::WebsocketSimpleWeb"
+	    }
+	}
+    },
+    "REST": {
+	"single": true,
+	"choice": {
+	    "Boost Beast": {
+		"owner": "DiscordPP",
+		"name": "rest-beast",
+		"include": "discordpp/rest-beast.hh",
+		"class": "discordpp::RestBeast"
+	    }
+	}
+    },
+    "Ratelimiter": {
+	"single": true,
+	"choice": {
+	    "Default": {
+		"owner": "DiscordPP",
+		"name": "plugin-ratelimit",
+		"include": "discordpp/plugin-ratelimit.hh",
+		"class": "discordpp::PluginRateLimit"
+	    }
+	}
+    },
+    "Plugin": {
+	"single": false,
+	"choice": {
+	    "Overload": {
+		"owner": "DiscordPP",
+		"name": "plugin-overload",
+		"include": "discordpp/plugin-overload.hh",
+		"class": "discordpp::PluginOverload"
+	    },
+	    "Responder": {
+		"owner": "DiscordPP",
+		"name": "plugin-responder",
+		"include": "discordpp/plugin-responder.hh",
+		"class": "discordpp::PluginOverload"
+	    },
+	    "Endpoints": {
+		"owner": "DiscordPP",
+		"name": "plugin-endpoints",
+		"include": "discordpp/plugin-endpoints.hh",
+		"class": "discordpp::PluginEndpoints"
+	    },
+	    "Constructs": {
+		"owner": "DiscordPP",
+		"name": "plugin-constructs",
+		"include": "discordpp/plugin-constructs.hh",
+		"class": "discordpp::PluginConstructs"
+	    }
+	}
+    }
+}
